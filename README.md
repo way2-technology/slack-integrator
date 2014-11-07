@@ -1,4 +1,4 @@
 slack-integrator
 ================
 
-integrate slack with your favourite applications easily!
+integrate slack with your favorite applications easily!
