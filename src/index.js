@@ -14,7 +14,6 @@ var redmine = require('./redmine/redmine');
 var bitbucketPR = require('./bitbucket/pr');
 var teamcityBuild = require('./teamcity/build');
 var config = require('./utils/config');
-console.log(config);
 
 app.get('/', root);
 
