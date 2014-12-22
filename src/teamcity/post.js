@@ -13,8 +13,14 @@ module.exports = function (data) {
       'sendImmediately': true
     }
   }, function (error, response, body) {
-    if (error) {
-      console.log(error);
+    if (error || response.statusCode != 200) {
+      console.log('StatusCode: ' + response.statusCode);
+      console.log('Error: ' + error);
+      console.log('Body: ' + body);
+    }
+    else {
+      console.log('Successfully queued build ' + data.buildTypeId
+        + ' on branch ' + data.branchName);
     }
   });
 };
