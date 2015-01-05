@@ -10,8 +10,11 @@ module.exports = function (req, res) {
     var repository = body.repository;
     var buildId = buildIdDictionary[repository.name];
     var branches = _.chain(body.commits)
+                    .reject(function(c) {
+                      return c.author.toLowerCase() == 'teamcity'.toLowerCase();
+                    })
                     .map(function(c) {
-                        return c.branch;
+                      return c.branch;
                     })
                     .uniq()
                     .value();
@@ -19,7 +22,7 @@ module.exports = function (req, res) {
     if (_.contains(branches, 'default')) {
       var data = {
         buildTypeId: buildId,
-        branchName: 'default',
+        branchName: '<default>',
       };
       postBuild(data);
     }
