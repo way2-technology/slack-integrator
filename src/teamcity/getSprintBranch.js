@@ -14,7 +14,6 @@ module.exports = function (callback) {
   }, function (error, response, body) {
     if (error || response.statusCode != 200) {
       console.log('tc-getSprintBranch failure');
-      console.log(response);
       console.log('StatusCode: ' + (response ? response.statusCode : null));
       console.log('Error: ' + error);
       console.log('Body: ' + body);
