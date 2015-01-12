@@ -2,10 +2,9 @@
 var request = require('request');
 var config = require('../utils/config');
 
-module.exports = function (data) {
-  request.post({
-    url: config.tcBuildUrl,
-    body: data,
+module.exports = function (callback) {
+  request.get({
+    url: config.tcRestUrl + 'projects/PlataformaDeColeta/parameters/sprint.branch',
     json: true,
     'auth': {
       'user': config.tcUser,
@@ -14,13 +13,15 @@ module.exports = function (data) {
     }
   }, function (error, response, body) {
     if (error || response.statusCode != 200) {
-      console.log('StatusCode: ' + response.statusCode);
+      console.log('tc-getSprintBranch failure');
+      console.log(response);
+      console.log('StatusCode: ' + (response ? response.statusCode : null));
       console.log('Error: ' + error);
       console.log('Body: ' + body);
+      callback('');
     }
     else {
-      console.log('Successfully queued build ' + data.buildTypeId
-        + ' on branch ' + data.branchName);
+      callback(body.value);
     }
   });
 };
