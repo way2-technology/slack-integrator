@@ -4,7 +4,7 @@ var config = {
   redmineApiKey: process.env.redmineApiKey,
   redmineUrl: process.env.redmineUrl,
   slackUrl: process.env.slackUrl,
-  tcBuildUrl: process.env.tcBuildUrl,
+  tcRestUrl: process.env.tcRestUrl,
   tcUser: process.env.tcUser,
   tcPassword: process.env.tcPassword
 };
