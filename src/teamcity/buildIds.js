@@ -62,6 +62,13 @@ module.exports = {
       'buildBranch': '<default>'
     },
   ],
+  'Drivers.Tekpea': [
+    {
+      'branchDefinition': 'default',
+      'buildId': 'Drivers_Tekpea_Ci',
+      'buildBranch': '<default>'
+    },
+  ],
   'Way2 Abnt': [
     {
       'branchDefinition': 'default',
