@@ -5,6 +5,7 @@ var getSprintBranch = require('../teamcity/getSprintBranch');
 var buildIdDictionary = require('../teamcity/buildIds');
 var util = require('util');
 var _ = require('lodash');
+var teamcityUsuario = 'bot-way2';
 
 module.exports = function (req, res) {
   var body = JSON.parse(req.body.payload);
@@ -20,7 +21,7 @@ module.exports = function (req, res) {
 var processCommits = function(commits, sprintBranch, repository) {
   _.chain(commits)
     .reject(function(commit) {
-      return commit.author.toLowerCase() == 'teamcity'.toLowerCase();
+      return commit.author.toLowerCase() == teamcityUsuario.toLowerCase();
     })
     .map(function(commit) {
      return commit.branch;
