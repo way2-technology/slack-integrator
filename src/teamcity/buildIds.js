@@ -117,7 +117,7 @@ module.exports = {
       'buildBranch': '<default>'
     },
     {
-      'branchDefinition': /^#\d{4}$/,
+      'branchDefinition': /^[A-Z0-9]+\-[0-9]+$/,
       'buildId': 'PlataformaDeColeta_Common_Issue',
       'buildBranch': ''
     }
