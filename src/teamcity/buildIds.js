@@ -81,6 +81,13 @@ module.exports = {
       'buildBranch': '<default>'
     }
   ],
+  'Drivers.MultiSpeak': [
+    {
+      'branchDefinition': 'default',
+      'buildId': 'Drivers_Multispeak_Ci',
+      'buildBranch': '<default>'
+    },
+  ],
   'Manager': [
     {
       'branchDefinition': 'default',
